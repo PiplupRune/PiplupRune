@@ -1,10 +1,10 @@
 {
-    "activeFile": "scripts/world/maps/quainton_ruins.tmx",
+    "activeFile": "scripts/world/maps/dischamb_chamber7.tmx",
     "expandedProjectPaths": [
-        "scripts/world",
-        "scripts/world/maps",
         "scripts/world/tilesets",
-        "."
+        ".",
+        "scripts/world/maps",
+        "scripts/world"
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
@@ -27,43 +27,115 @@
         "C:/Program Files/LOVE/Kristal/mods/example/scripts/world/tilesets/castle.tsx": {
             "scaleInDock": 1
         },
-        "scripts/world/maps/entrance_chamber_1.tmx": {
+        "scripts/world/maps/dischamb_chamber1.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 520,
+                "y": 440
+            }
+        },
+        "scripts/world/maps/dischamb_chamber2.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1459,
+                "y": -157
+            }
+        },
+        "scripts/world/maps/dischamb_chamber3.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 460,
+                "y": -114
+            }
+        },
+        "scripts/world/maps/dischamb_chamber4.tmx": {
+            "scale": 1.1320833333333333,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 519.3963930806037,
+                "y": 879.7938903202062
+            }
+        },
+        "scripts/world/maps/dischamb_chamber5.tmx": {
+            "scale": 1,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 314,
+                "y": 416
+            }
+        },
+        "scripts/world/maps/dischamb_chamber6.tmx": {
+            "expandedObjectLayers": [
+                3
+            ],
+            "scale": 1,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 3300,
+                "y": 320
+            }
+        },
+        "scripts/world/maps/dischamb_chamber7.tmx": {
             "expandedObjectLayers": [
                 4,
+                3,
+                5
+            ],
+            "scale": 1,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 1209,
+                "y": 400
+            }
+        },
+        "scripts/world/maps/dischamb_startingroom.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 420.5,
+                "y": 239.5
+            }
+        },
+        "scripts/world/maps/entrance_chamber_1.tmx": {
+            "expandedObjectLayers": [
                 5,
+                4,
                 3
             ],
             "scale": 1,
             "selectedLayer": 0,
             "viewCenter": {
                 "x": 340,
-                "y": 400.5
+                "y": 400
             }
         },
         "scripts/world/maps/entrance_chamber_2.tmx": {
             "expandedObjectLayers": [
-                4,
                 5,
+                4,
                 3
             ],
             "scale": 1,
             "selectedLayer": 4,
             "viewCenter": {
                 "x": 480,
-                "y": 239.5
+                "y": 239
             }
         },
         "scripts/world/maps/entrance_chamber_3.tmx": {
             "expandedObjectLayers": [
-                4,
                 5,
+                4,
                 3
             ],
             "scale": 1,
             "selectedLayer": 4,
             "viewCenter": {
                 "x": 400,
-                "y": 400.5
+                "y": 400
             }
         },
         "scripts/world/maps/entrance_chamber_4.tmx": {
@@ -72,7 +144,7 @@
                 5
             ],
             "scale": 1,
-            "selectedLayer": 3,
+            "selectedLayer": 4,
             "viewCenter": {
                 "x": 800,
                 "y": 239.5
@@ -87,8 +159,8 @@
             "scale": 2,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 337.5,
-                "y": 240.25
+                "x": 320,
+                "y": 239.5
             }
         },
         "scripts/world/maps/quainton_ruins.tmx": {
@@ -142,20 +214,20 @@
             "selectedLayer": 4,
             "viewCenter": {
                 "x": 320,
-                "y": 279.5
+                "y": 280
             }
         },
         "scripts/world/maps/the_riverbed_west_of_quainton.tmx": {
             "expandedObjectLayers": [
                 7,
-                5,
-                6
+                6,
+                5
             ],
             "scale": 1,
-            "selectedLayer": 4,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 1305,
-                "y": 239.5
+                "x": -80,
+                "y": 320
             }
         },
         "scripts/world/tilesets/bluish_cave.tsx": {
@@ -166,6 +238,9 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
+        "scripts/world/tilesets/dismal_chambers.tsx": {
+            "scaleInDock": 1
+        },
         "scripts/world/tilesets/example_tileset.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
@@ -175,12 +250,13 @@
             "scaleInEditor": 3
         }
     },
-    "last.exportedFilePath": "C:/Users/lilkr/AppData/Roaming/LOVE/kristal/mods/pocket_darkners/scripts/world/maps",
+    "last.exportedFilePath": "C:/Users/lilkr/Documents/PiplupRune Repo/Kristal/mods/pocket_darkners/scripts/world/maps",
     "last.imagePath": "C:/Users/lilkr/AppData/Roaming/LOVE/kristal/mods/pocket_darkners/assets/sprites/tilesets",
     "last.worldFilePath": "C:/Users/lilkr/AppData/Roaming/LOVE/kristal/mods/pocket_darkners/scripts/world",
     "loadedWorlds": [
-        "C:/Users/lilkr/AppData/Roaming/LOVE/kristal/mods/pocket_darkners/scripts/world/template.world",
-        "C:/Users/lilkr/AppData/Roaming/LOVE/kristal/mods/pocket_darkners/scripts/world/overworld.world"
+        "C:/Users/lilkr/AppData/Roaming/LOVE/kristal/mods/pocket_darkners/scripts/world/overworld.world",
+        "C:/Users/lilkr/Documents/PiplupRune Repo/Kristal/mods/pocket_darkners/scripts/world/overworld.world",
+        "C:/Users/lilkr/Documents/PiplupRune Repo/Kristal/mods/pocket_darkners/scripts/world/overworld_new.world"
     ],
     "map.height": 20,
     "map.lastUsedExportFilter": "Lua files (*.lua)",
@@ -190,33 +266,27 @@
     "map.width": 30,
     "mapScene.enableWorlds": true,
     "openFiles": [
-        "scripts/world/tilesets/example_tileset.tsx",
-        "scripts/world/maps/example_map.tmx",
-        "scripts/world/maps/starting_room.tmx",
-        "scripts/world/tilesets/bluish_cave.tsx",
-        "scripts/world/maps/entrance_chamber_1.tmx",
-        "scripts/world/maps/entrance_chamber_2.tmx",
-        "scripts/world/maps/entrance_chamber_3.tmx",
         "scripts/world/maps/entrance_chamber_4.tmx",
-        "scripts/world/tilesets/quainton_ruins_and_river.tsx",
-        "scripts/world/maps/the_riverbed_west_of_quainton.tmx",
-        "scripts/world/maps/quainton_ruins.tmx"
+        "scripts/world/maps/dischamb_chamber6.tmx",
+        "scripts/world/maps/dischamb_startingroom.tmx",
+        "scripts/world/maps/dischamb_chamber7.tmx",
+        "scripts/world/maps/the_riverbed_west_of_quainton.tmx"
     ],
     "project": "pocket_darkners.tiled-project",
     "property.type": "string",
     "recentFiles": [
-        "scripts/world/tilesets/example_tileset.tsx",
-        "scripts/world/maps/example_map.tmx",
-        "scripts/world/maps/starting_room.tmx",
-        "scripts/world/tilesets/bluish_cave.tsx",
-        "scripts/world/maps/entrance_chamber_1.tmx",
-        "scripts/world/maps/entrance_chamber_2.tmx",
-        "scripts/world/maps/entrance_chamber_3.tmx",
         "scripts/world/maps/entrance_chamber_4.tmx",
-        "scripts/world/tilesets/quainton_ruins_and_river.tsx",
+        "scripts/world/maps/dischamb_chamber6.tmx",
+        "scripts/world/maps/dischamb_startingroom.tmx",
         "scripts/world/maps/the_riverbed_west_of_quainton.tmx",
-        "scripts/world/maps/quainton_ruins.tmx",
-        "C:/Program Files/LOVE/Kristal/mods/example/scripts/world/maps/room1.tmx"
+        "scripts/world/maps/dischamb_chamber7.tmx",
+        "scripts/world/maps/dischamb_chamber5.tmx",
+        "scripts/world/maps/dischamb_chamber4.tmx",
+        "scripts/world/maps/dischamb_chamber3.tmx",
+        "scripts/world/maps/dischamb_chamber2.tmx",
+        "scripts/world/maps/dischamb_chamber1.tmx",
+        "scripts/world/maps/starting_room.tmx",
+        "scripts/world/maps/quainton_ruins.tmx"
     ],
     "tileset.lastUsedExportFilter": "Lua files (*.lua)",
     "tileset.lastUsedFormat": "tsx",

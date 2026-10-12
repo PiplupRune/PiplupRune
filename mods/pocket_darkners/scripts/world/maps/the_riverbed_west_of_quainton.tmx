@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="68" height="12" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#000000" nextlayerid="8" nextobjectid="61">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="68" height="12" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#000000" nextlayerid="8" nextobjectid="61">
  <editorsettings>
   <export target="the_riverbed_west_of_quainton.lua" format="lua"/>
  </editorsettings>
@@ -98,7 +98,7 @@
   <object id="1" name="transition" x="160" y="200" width="40" height="80">
    <properties>
     <property name="facing" value="left"/>
-    <property name="map" value="entrance_chamber_4"/>
+    <property name="map" value="dischamb_chamber7"/>
     <property name="marker" value="exit"/>
    </properties>
   </object>
