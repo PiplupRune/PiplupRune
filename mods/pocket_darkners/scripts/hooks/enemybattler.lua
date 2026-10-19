@@ -66,6 +66,69 @@ function EnemyBattler:giveStatus(status, msg)
             Game.battle.timer:tween(tween, mask, {amount = 0})
         end)
         return true
+    
+    elseif status == "frostbite" then 
+    self:statusMessage("msg", msg or "frostbitten")
+    local mask = ColorMaskFX(ColorUtils.hexToRGB("739BD0"))
+    mask.amount = 0 
+    self:addFX(mask)
+    Game.battle.timer:tween(0.25, mask, {amount = 0.7}, "linear", function()
+        Game.battle.timer:tween(0.25, mask, {amount = 0})
+    end)
+    
+    local spawned_positions = {}
+    local mx = self.width / 4
+    local my = self.height / 4
+    
+    local num_flakes = MathUtils.randomInt(3, 4)
+    
+    for i = 1, num_flakes do 
+        local delay = (i - 1) * 0.15 
+        
+        Game.battle.timer:after(delay, function()
+            local x, y
+            local valid_position = false
+            local safety_counter = 0
+            
+            while not valid_position and safety_counter < 50 do
+                safety_counter = safety_counter + 1
+                local base_x, base_y = self:getRelativePos(self.width/2, self.height/2)
+                x = base_x + MathUtils.randomInt(-self.width/3, self.width/3)
+                y = base_y + MathUtils.randomInt(-self.height/3, self.height/3)
+                valid_position = true
+                for _, pos in ipairs(spawned_positions) do
+                    local distance_x = math.abs(x - pos.x)
+                    local distance_y = math.abs(y - pos.y)
+                    if distance_x < mx or distance_y < my then
+                        valid_position = false
+                        break
+                    end
+                end
+            end
+            table.insert(spawned_positions, {x = x, y = y})
+            
+            local ice = Sprite("effects/icespell/snowflake", x, y)
+            ice:setOrigin(0.5, 0.5) 
+            ice:setScale(0)
+            ice.alpha = 0
+            
+            Game.battle:addChild(ice)
+            local max_scale = MathUtils.random(0.6, 1.2) 
+            ice.graphics.spin = MathUtils.random(-0.2, 0.2)
+            
+            Assets.playSound("snow_appear", 2)
+            
+            ice:fadeTo(1, 0.4)
+            Game.battle.timer:tween(0.4, ice, {scale_x = max_scale, scale_y = max_scale}, "out-quad", function()
+                Game.battle.timer:after(0.25, function()
+                    ice.graphics.spin = ice.graphics.spin * -1 
+                    ice:fadeOutAndRemove(0.4)
+                    Game.battle.timer:tween(0.4, ice, {scale_x = 0, scale_y = 0}, "out-quad")
+                end)
+            end)
+        end)
+    end
+
         
     elseif status == "paralysis" then 
         self:statusMessage("msg", msg or "paralyzed")
