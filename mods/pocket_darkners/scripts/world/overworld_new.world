@@ -1,0 +1,118 @@
+{
+    "maps": [
+        {
+            "fileName": "../../../../../../../../Documents/PiplupRune Repo/Kristal/mods/pocket_darkners/scripts/world/maps/dischamb_startingroom.tmx",
+            "height": 480,
+            "width": 840,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "fileName": "../../../../../../../../Documents/PiplupRune Repo/Kristal/mods/pocket_darkners/scripts/world/maps/dischamb_chamber1.tmx",
+            "height": 800,
+            "width": 1200,
+            "x": 920,
+            "y": -40
+        },
+        {
+            "fileName": "../../../../../../../../Documents/PiplupRune Repo/Kristal/mods/pocket_darkners/scripts/world/maps/dischamb_chamber2.tmx",
+            "height": 800,
+            "width": 1200,
+            "x": 920,
+            "y": 840
+        },
+        {
+            "fileName": "../../../../../../../../Documents/PiplupRune Repo/Kristal/mods/pocket_darkners/scripts/world/maps/dischamb_chamber3.tmx",
+            "height": 800,
+            "width": 1600,
+            "x": 920,
+            "y": 1720
+        },
+        {
+            "fileName": "../../../../../../../../Documents/PiplupRune Repo/Kristal/mods/pocket_darkners/scripts/world/maps/dischamb_chamber4.tmx",
+            "height": 960,
+            "width": 1200,
+            "x": 2600,
+            "y": 1320
+        },
+        {
+            "fileName": "../../../../../../../../Documents/PiplupRune Repo/Kristal/mods/pocket_darkners/scripts/world/maps/dischamb_chamber5.tmx",
+            "height": 1040,
+            "width": 1600,
+            "x": 3880,
+            "y": 1240
+        },
+        {
+            "fileName": "../../../../../../../../Documents/PiplupRune Repo/Kristal/mods/pocket_darkners/scripts/world/maps/dischamb_chamber6.tmx",
+            "height": 960,
+            "width": 1600,
+            "x": 3080,
+            "y": 200
+        },
+        {
+            "fileName": "maps/dischamb_startingroom.tmx",
+            "height": 480,
+            "width": 840,
+            "x": 4680,
+            "y": 200
+        },
+        {
+            "fileName": "maps/dischamb_chamber1.tmx",
+            "height": 800,
+            "width": 1200,
+            "x": 5600,
+            "y": 160
+        },
+        {
+            "fileName": "maps/dischamb_chamber2.tmx",
+            "height": 800,
+            "width": 1200,
+            "x": 5600,
+            "y": 1040
+        },
+        {
+            "fileName": "maps/dischamb_chamber3.tmx",
+            "height": 800,
+            "width": 1600,
+            "x": 5600,
+            "y": 1920
+        },
+        {
+            "fileName": "maps/dischamb_chamber4.tmx",
+            "height": 960,
+            "width": 1200,
+            "x": 7280,
+            "y": 1520
+        },
+        {
+            "fileName": "maps/dischamb_chamber5.tmx",
+            "height": 1040,
+            "width": 1600,
+            "x": 8560,
+            "y": 1440
+        },
+        {
+            "fileName": "maps/dischamb_chamber6.tmx",
+            "height": 960,
+            "width": 1600,
+            "x": 7760,
+            "y": 400
+        },
+        {
+            "fileName": "maps/dischamb_chamber7.tmx",
+            "height": 480,
+            "width": 1600,
+            "x": 9440,
+            "y": 400
+        },
+        {
+            "fileName": "maps/the_riverbed_west_of_quainton.tmx",
+            "height": 480,
+            "width": 2720,
+            "x": 11080,
+            "y": 480
+        }
+    ],
+    "onlyShowAdjacentMaps": false,
+    "type": "world"
+}

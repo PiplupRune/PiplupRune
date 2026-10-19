@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.0",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -656,7 +656,7 @@ return {
           visible = true,
           properties = {
             ["facing"] = "left",
-            ["map"] = "entrance_chamber_4",
+            ["map"] = "dischamb_chamber7",
             ["marker"] = "exit"
           }
         },

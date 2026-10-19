@@ -1,0 +1,138 @@
+{
+	"id": "unique_text",
+
+	"authors": ["Mew"],
+
+	"version": "v1.2.1",
+	"engineVer": "v0.11.0-dev",
+
+	"config": {
+		// Lets the "*" at the start of a line get the animation too (bounce, grow, rotate).
+		// If false, the asterisk just appears normally
+		"include_asterisk": false,
+
+		// How the text looks as it types out
+		// "typewriter" is plain typing with a blinking cursor
+		// "bounce", "grow" and "rotate" make each letter do a little animation when it shows up
+		"text_style": "null",
+
+		// Only used when text_style is "bounce"
+		"bounce_config": {
+			// How long each letter's bounce takes, in seconds
+			"bounce_duration": 0.08,
+
+			// Easing for the bounce ("linear", "out-back", etc.)
+			"bounce_easing_style": "linear",
+
+			// How many pixels lower the letter starts before it moves up into place
+			"bounce_height": 6
+		},
+
+		// Only used when text_style is "grow"
+		"grow_config": {
+			// How long each letter takes to grow to full size, in seconds
+			"grow_duration": 0.2,
+
+			// Easing for the growing. "out-back" overshoots a bit and then settles
+			"grow_easing_style": "out-back",
+
+			// The point the letter grows from
+			// top-left, top-center, top-right, center-left, center, center-right,
+			// bottom-left, bottom-center or bottom-right
+			"grow_origin": "bottom-center",
+
+			// How big the letter is when it first appears. 0.2 means 20% of its normal size
+			"grow_scale": 0.2
+		},
+
+		// Only used when text_style is "rotate"
+		"rotate_config": {
+			// How tilted the letter is when it appears, in degrees
+			"rotate_angle": 30,
+
+			// Which way the letter tilts, "right" or "left"
+			"rotate_direction_default": "right",
+
+			// Makes every letter pick left or right at random
+			// If this is true, rotate_direction_default doesn't do anything
+			"rotate_direction_random": false,
+
+			// How long the letter takes to straighten out, in seconds
+			"rotate_duration": 0.6,
+
+			// Easing for the rotation
+			"rotate_easing_style": "out-back",
+
+			// The point the letter spins around. Same options as grow_origin
+			"rotate_origin": "center"
+		},
+
+		// Everything below is for the "typewriter" style
+		"typewriter_config": {
+			// Color of the cursor, as [red, green, blue] from 0 to 1
+			"cursor_color": [1, 1, 1],
+
+			// true: the cursor fades in and out smoothly
+			// false: it just snaps on and off
+			"cursor_fade": true,
+
+			// How long one full blink takes, in seconds
+			// With cursor_fade off, the cursor is visible for half of this and hidden for the other half
+			// 1.06 is the same speed as the Windows text cursor
+			"cursor_fade_period": 1.060,
+
+			// How many seconds after the text finishes typing before the cursor disappears
+			// -1 means it never disappears, 0 means it disappears as soon as typing is done
+			// The cursor stays during [wait] and ^ pauses, since the text isn't finished yet
+			"cursor_hide_delay": -1,
+
+			// Width of the cursor, in pixels
+			"cursor_width": 2,
+
+			// Picks where the typos come from
+			// true: words get mistyped at random, using the typo settings below
+			// any [typo] command in the text is ignored (only the corrected word shows up)
+			// false: no random typos, only the ones you write yourself with [typo:wrong,right]
+			// example: "I [typo:definately,definitely] mean it"
+			"random_typos": false,
+
+			// These four only matter when random_typos is true
+
+			// Chance for a word to get typed wrong, from 0 to 1. 0 means never
+			"typo_chance": 0.75,
+
+			// The most times the same word can be typed wrong in a row before it comes out right
+			// Each word picks a random number from 1 up to this
+			"typo_max_attempts": 1,
+
+			// Shortest word that can get a typo. Keeps tiny words like "or" safe
+			"typo_min_length": 4,
+
+			// The most letters that can be wrong in one mistyped word
+			// Each typo picks a random number from 1 up to this
+			"typo_max_letters": 2,
+
+			// These ones apply to random typos and [typo] both
+
+			// true: only the wrong part gets erased, the correct letters before it stay
+			// (typing "teh" instead of "the" keeps the "t")
+			// false: the whole word gets erased every time
+			"typo_partial_erase": true,
+
+			// How long the wrong word sits there before it gets deleted, in seconds
+			// 0 means no pause
+			"typo_pause": 0.22,
+
+			// Color of the highlight box, as [red, green, blue] from 0 to 1
+			"typo_select_color": [0.2, 0.25, 0.58],
+
+			// How long the highlight stays before the word is deleted, in seconds
+			"typo_select_time": 0.25,
+
+			// When a whole word gets erased:
+			// true: the word is highlighted and then deleted all at once
+			// false: it's deleted one letter at a time
+			"typo_select_word": true
+		}
+	}
+}

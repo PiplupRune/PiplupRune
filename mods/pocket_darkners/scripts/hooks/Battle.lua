@@ -53,14 +53,14 @@ function Battle:onStatusGiveTime(old_state)
     if #poisoned > 0 then
         for i = 1, #poisoned do
             poisoned[i]:takePoisonDamage(false)
-            table.insert(text_lines, "* " .. poisoned[i].name .. " was hurt by poison!")
+            table.insert(text_lines, "* " .. poisoned[i].name .. " was hurt by the poison!")
         end
     end
 
     if #badly_poisoned > 0 then
         for i = 1, #badly_poisoned do
             badly_poisoned[i]:takePoisonDamage(true) 
-            table.insert(text_lines, "* " .. badly_poisoned[i].name .. " was badly hurt by poison!")
+            table.insert(text_lines, "* " .. badly_poisoned[i].name .. " was badly hurt by the poison!")
         end
     end
     

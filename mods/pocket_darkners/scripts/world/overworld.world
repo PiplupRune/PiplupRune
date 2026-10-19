@@ -36,13 +36,6 @@
             "y": -400
         },
         {
-            "fileName": "maps/the_riverbed_west_of_quainton.tmx",
-            "height": 480,
-            "width": 2720,
-            "x": 4880,
-            "y": -400
-        },
-        {
             "fileName": "maps/quainton_ruins.tmx",
             "height": 1080,
             "width": 1600,

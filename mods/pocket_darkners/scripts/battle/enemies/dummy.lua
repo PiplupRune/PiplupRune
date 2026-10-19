@@ -75,7 +75,7 @@ function Dummy:onAct(battler, name)
         }
     elseif name == "POISON" then 
     Game.battle:startActCutscene(function(cutscene)
-        cutscene:text("* Which type of poision doth thou want?")
+        cutscene:text("* Which type of poison wantest thou?")
         local c = cutscene:choicer({"Toxic!!", "Normal!!"})
         local str
         local _

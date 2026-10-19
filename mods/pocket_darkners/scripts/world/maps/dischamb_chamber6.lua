@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 6,
-  nextobjectid = 19,
+  nextobjectid = 20,
   properties = {
     ["music"] = "zzz/pokedaa_mus_ruins_test"
   },
@@ -327,7 +327,7 @@ return {
           visible = true,
           properties = {
             ["facing"] = "right",
-            ["map"] = "entrance_chamber_4",
+            ["map"] = "dischamb_chamber7",
             ["marker"] = "entrance"
           }
         },
