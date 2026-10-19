@@ -8,6 +8,7 @@ function EnemyBattler:init(...)
     self.poison = false
     self.toxic = false
     self.paralyzed = false
+    self.frozen = false 
     self.toxic_count = 0 -- Keeps track of how many turns Toxic has been active (itll never go away :3)
 end 
 
@@ -15,23 +16,25 @@ function EnemyBattler:hurt(amount, ...)
     super.hurt(self, amount, ...)
 end 
 
-function EnemyBattler:getNextWaves()
-    if self.affect_waves then
-        self.affect_waves = false  
-        return {"hidden"}
-    elseif self.paralyzed then 
-        if love.math.random(1, 4) == 1 then 
-            return {"paralysis"}
-        else
-            return super.getNextWaves(self)
-        end 
-    else 
-        return super.getNextWaves(self)
-    end 
-end
+-- function EnemyBattler:getNextWaves()
+--     if self.affect_waves then
+--         self.affect_waves = false  
+--         return {"statuses/hidden"}
+--     elseif self.frozen then 
+--         return {"statuses/frozen"} 
+--     elseif self.paralyzed then 
+--         if love.math.random(1, 4) == 1 then 
+--             return {"statuses/paralysis"}
+--         else
+--             return super.getNextWaves(self)
+--         end 
+--     else 
+--         return super.getNextWaves(self)
+--     end 
+-- end
 
 function EnemyBattler:hasNonVolatileStatus()
-    return self.poison or self.toxic or self.paralyzed
+    return self.poison or self.toxic or self.paralyzed or self.frozen 
 end
 
 --- Attempts to apply a specific status condition to the enemy battler.
@@ -69,6 +72,7 @@ function EnemyBattler:giveStatus(status, msg)
     
     elseif status == "frostbite" then 
     self:statusMessage("msg", msg or "frostbitten")
+    self.frozen = true 
     local mask = ColorMaskFX(ColorUtils.hexToRGB("739BD0"))
     mask.amount = 0 
     self:addFX(mask)
@@ -160,6 +164,8 @@ function EnemyBattler:cure(status)
     self:statusMessage("msg", "cured")
     if status == "poison" then 
         self.poison = false 
+    elseif status == "frozen" then 
+        self.frozen = false 
     elseif status == "paralysis" then 
         self.paralyzed = false 
     elseif status == "toxic" then
@@ -172,6 +178,7 @@ end
 function EnemyBattler:cureAll() 
     self.poison = false 
     self.toxic = false
+    self.frozen = false 
     self.paralyzed = false 
     self.toxic_count = 0
     self.affect_waves = false 
