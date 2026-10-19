@@ -90,10 +90,10 @@ function Dummy:onAct(battler, name)
         cutscene:text(str or "* Owwww that huts :(")
     end)
     elseif name == "FLINCH" then 
-        self:giveStatus("flinch")
+        self:giveStatus("flinch", nil, true)
         return "* Oof"
     elseif name == "ELECTRICITY" then 
-        self:giveStatus("paralysis")
+        self:giveStatus("paralysis", nil, true)
         return "* Oof"
 
     elseif name == "Tell Story" then

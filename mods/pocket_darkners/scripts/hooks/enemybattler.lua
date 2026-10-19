@@ -14,24 +14,7 @@ end
 
 function EnemyBattler:hurt(amount, ...)
     super.hurt(self, amount, ...)
-end 
-
--- function EnemyBattler:getNextWaves()
---     if self.affect_waves then
---         self.affect_waves = false  
---         return {"statuses/hidden"}
---     elseif self.frozen then 
---         return {"statuses/frozen"} 
---     elseif self.paralyzed then 
---         if love.math.random(1, 4) == 1 then 
---             return {"statuses/paralysis"}
---         else
---             return super.getNextWaves(self)
---         end 
---     else 
---         return super.getNextWaves(self)
---     end 
--- end
+end
 
 function EnemyBattler:hasNonVolatileStatus()
     return self.poison or self.toxic or self.paralyzed or self.frozen 
@@ -40,20 +23,20 @@ end
 --- Attempts to apply a specific status condition to the enemy battler.
 ---@param status string # The status ID to apply. Current options: `flinch`, `poison`, `paralysis` and `toxic`.
 ---@param msg string? # Optional custom text message string to pass to the statusMessage method.
-function EnemyBattler:giveStatus(status, msg)
-
+function EnemyBattler:giveStatus(status, msg, bypass_chance)
+    bypass_chance = (bypass_chance == nil) and false or bypass_chance
     if status == "flinch" then 
-    if love.math.random(1, 10) <= 3 then 
+        if bypass_chance or love.math.random(1, 10) <= 3 then 
             self:statusMessage("msg", msg or "flinched")
             self:debuffEffect(ColorUtils.hexToRGB("EFC55B"))
             self.affect_waves = true 
             return true
-    end
+        end
         return false
     end
 
-    -- KEEP THIS BLOCK OF CODE **AFTER** EVERY VOLATILE STATUS - REMINDER FOR FLUFFY (...when i say volatile i mean thingies that can be stacked)
-    if self:hasNonVolatileStatus() then 
+    -- KEEP THIS BLOCK OF CODE **AFTER** EVERY VOLATILE STATUS - REMINDER FOR FLUFFY 
+    if not bypass_chance and self:hasNonVolatileStatus() then 
         return true, "* It had no effect."
     end
 
@@ -71,69 +54,69 @@ function EnemyBattler:giveStatus(status, msg)
         return true
     
     elseif status == "frostbite" then 
-    self:statusMessage("msg", msg or "frostbitten")
-    self.frozen = true 
-    local mask = ColorMaskFX(ColorUtils.hexToRGB("739BD0"))
-    mask.amount = 0 
-    self:addFX(mask)
-    Game.battle.timer:tween(0.25, mask, {amount = 0.7}, "linear", function()
-        Game.battle.timer:tween(0.25, mask, {amount = 0})
-    end)
-    
-    local spawned_positions = {}
-    local mx = self.width / 4
-    local my = self.height / 4
-    
-    local num_flakes = MathUtils.randomInt(3, 4)
-    
-    for i = 1, num_flakes do 
-        local delay = (i - 1) * 0.15 
+        self:statusMessage("msg", msg or "frostbitten")
+        self.frozen = true 
+        local mask = ColorMaskFX(ColorUtils.hexToRGB("739BD0"))
+        mask.amount = 0 
+        self:addFX(mask)
+        Game.battle.timer:tween(0.25, mask, {amount = 0.7}, "linear", function()
+            Game.battle.timer:tween(0.25, mask, {amount = 0})
+        end)
         
-        Game.battle.timer:after(delay, function()
-            local x, y
-            local valid_position = false
-            local safety_counter = 0
+        local spawned_positions = {}
+        local mx = self.width / 4
+        local my = self.height / 4
+        
+        local num_flakes = MathUtils.randomInt(3, 4)
+        
+        for i = 1, num_flakes do 
+            local delay = (i - 1) * 0.15 
             
-            while not valid_position and safety_counter < 50 do
-                safety_counter = safety_counter + 1
-                local base_x, base_y = self:getRelativePos(self.width/2, self.height/2)
-                x = base_x + MathUtils.randomInt(-self.width/3, self.width/3)
-                y = base_y + MathUtils.randomInt(-self.height/3, self.height/3)
-                valid_position = true
-                for _, pos in ipairs(spawned_positions) do
-                    local distance_x = math.abs(x - pos.x)
-                    local distance_y = math.abs(y - pos.y)
-                    if distance_x < mx or distance_y < my then
-                        valid_position = false
-                        break
+            Game.battle.timer:after(delay, function()
+                local x, y
+                local valid_position = false
+                local safety_counter = 0
+                
+                while not valid_position and safety_counter < 50 do
+                    safety_counter = safety_counter + 1
+                    local base_x, base_y = self:getRelativePos(self.width/2, self.height/2)
+                    x = base_x + MathUtils.randomInt(-self.width/3, self.width/3)
+                    y = base_y + MathUtils.randomInt(-self.height/3, self.height/3)
+                    valid_position = true
+                    for _, pos in ipairs(spawned_positions) do
+                        local distance_x = math.abs(x - pos.x)
+                        local distance_y = math.abs(y - pos.y)
+                        if distance_x < mx or distance_y < my then
+                            valid_position = false
+                            break
+                        end
                     end
                 end
-            end
-            table.insert(spawned_positions, {x = x, y = y})
-            
-            local ice = Sprite("effects/icespell/snowflake", x, y)
-            ice:setOrigin(0.5, 0.5) 
-            ice:setScale(0)
-            ice.alpha = 0
-            
-            Game.battle:addChild(ice)
-            local max_scale = MathUtils.random(0.6, 1.2) 
-            ice.graphics.spin = MathUtils.random(-0.2, 0.2)
-            
-            Assets.playSound("snow_appear", 2)
-            
-            ice:fadeTo(1, 0.4)
-            Game.battle.timer:tween(0.4, ice, {scale_x = max_scale, scale_y = max_scale}, "out-quad", function()
-                Game.battle.timer:after(0.25, function()
-                    ice.graphics.spin = ice.graphics.spin * -1 
-                    ice:fadeOutAndRemove(0.4)
-                    Game.battle.timer:tween(0.4, ice, {scale_x = 0, scale_y = 0}, "out-quad")
+                table.insert(spawned_positions, {x = x, y = y})
+                
+                local ice = Sprite("effects/icespell/snowflake", x, y)
+                ice:setOrigin(0.5, 0.5) 
+                ice:setScale(0)
+                ice.alpha = 0
+                
+                Game.battle:addChild(ice)
+                local max_scale = MathUtils.random(0.6, 1.2) 
+                ice.graphics.spin = MathUtils.random(-0.2, 0.2)
+                
+                Assets.playSound("snow_appear", 2)
+                
+                ice:fadeTo(1, 0.4)
+                Game.battle.timer:tween(0.4, ice, {scale_x = max_scale, scale_y = max_scale}, "out-quad", function()
+                    Game.battle.timer:after(0.25, function()
+                        ice.graphics.spin = ice.graphics.spin * -1 
+                        ice:fadeOutAndRemove(0.4)
+                        Game.battle.timer:tween(0.4, ice, {scale_x = 0, scale_y = 0}, "out-quad")
+                    end)
                 end)
             end)
-        end)
-    end
+        end
+        return true
 
-        
     elseif status == "paralysis" then 
         self:statusMessage("msg", msg or "paralyzed")
         Assets.playSound("paralyze")
@@ -156,6 +139,8 @@ function EnemyBattler:giveStatus(status, msg)
         end)
         return true
     end 
+    
+    return false
 end
 
 --- Removes a status condition from the enemy battler.
