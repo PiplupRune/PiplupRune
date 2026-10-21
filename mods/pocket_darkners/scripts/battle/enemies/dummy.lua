@@ -57,7 +57,7 @@ function Dummy:init()
     self:registerAct("Smile")
     -- Register party act with Ralsei called "Tell Story"
     -- (second argument is description, usually empty)
-    self:registerAct("Tell Story", "", {"ralsei"})
+    self:registerAct("FROSTVEIL")
     self:registerAct("POISON")
     self:registerAct("FLINCH")
     self:registerAct("ELECTRICITY")
@@ -74,6 +74,9 @@ function Dummy:onAct(battler, name)
             "* You smile.[wait:5]\n* The dummy smiles back.",
             "* It seems the dummy just wanted\nto see you happy."
         }
+    elseif name == "FROSTVEIL" then 
+        self:giveStatus("frostbite")
+        return "* The power of [color:blue]FROSTVEIL[wait:10][color:reset]\nshines within you."
     elseif name == "POISON" then 
     Game.battle:startActCutscene(function(cutscene)
         cutscene:text("* Which type of poison wantest thou?")
@@ -88,10 +91,10 @@ function Dummy:onAct(battler, name)
         cutscene:text(str or "* Owwww that huts :(")
     end)
     elseif name == "FLINCH" then 
-        self:giveStatus("flinch")
+        self:giveStatus("flinch", nil, true)
         return "* Oof"
     elseif name == "ELECTRICITY" then 
-        self:giveStatus("paralysis")
+        self:giveStatus("paralysis", nil, true)
         return "* Oof"
 
     elseif name == "Tell Story" then

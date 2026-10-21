@@ -6,11 +6,11 @@ function Basic:init()
     self.spawn_soul = false
     self.has_arena = false   
     local snd = Assets.playSound("paralyze")
-    local attackers = self:getAttackers() or {}
     local names = {}
-    for _, enemy in ipairs(attackers) do
-        enemy:shake()
-        table.insert(names, enemy.name)
+    for _, enemy in ipairs(Game.battle:getActiveEnemies()) do
+        if enemy.paralyzed then
+            table.insert(names, enemy.name)
+        end
     end
     self.timer:after(snd:getDuration(), function()
         local full_message = ""
@@ -19,7 +19,7 @@ function Basic:init()
             full_message = "[noskip]* " .. names[1] .. " is paralyzed and can't move!"
         elseif #names == 2 then
             full_message = "[noskip]* " .. names[1] .. " and " .. names[2] .. " are paralyzed and can't move!"
-        else
+        elseif #names == 3 then 
             local all_but_last = table.concat(names, ", ", 1, #names - 1)
             full_message = "[noskip]* " .. all_but_last .. ", and " .. names[#names] .. " are paralyzed and can't move!"
         end
