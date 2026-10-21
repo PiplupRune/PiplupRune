@@ -1,10 +1,10 @@
 {
     "activeFile": "scripts/world/maps/dischamb_chamber7.tmx",
     "expandedProjectPaths": [
-        "scripts/world/tilesets",
-        ".",
         "scripts/world/maps",
-        "scripts/world"
+        "scripts/world",
+        ".",
+        "scripts/world/tilesets"
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
@@ -74,21 +74,21 @@
             "scale": 1,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 3300,
-                "y": 320
+                "x": 799.5,
+                "y": 480.5
             }
         },
         "scripts/world/maps/dischamb_chamber7.tmx": {
             "expandedObjectLayers": [
-                4,
+                5,
                 3,
-                5
+                4
             ],
-            "scale": 1,
+            "scale": 0.75,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 1209,
-                "y": 400
+                "x": 521.3333333333333,
+                "y": 442.66666666666663
             }
         },
         "scripts/world/maps/dischamb_startingroom.tmx": {
@@ -140,14 +140,14 @@
         },
         "scripts/world/maps/entrance_chamber_4.tmx": {
             "expandedObjectLayers": [
-                4,
-                5
+                5,
+                4
             ],
-            "scale": 1,
+            "scale": 0.25,
             "selectedLayer": 4,
             "viewCenter": {
                 "x": 800,
-                "y": 239.5
+                "y": 238
             }
         },
         "scripts/world/maps/example_map.tmx": {
@@ -219,15 +219,15 @@
         },
         "scripts/world/maps/the_riverbed_west_of_quainton.tmx": {
             "expandedObjectLayers": [
+                5,
                 7,
-                6,
-                5
+                6
             ],
             "scale": 1,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": -80,
-                "y": 320
+                "x": 1267.5,
+                "y": 239.5
             }
         },
         "scripts/world/tilesets/bluish_cave.tsx": {

@@ -48,6 +48,7 @@ function Dummy:init()
         "* The test enemy wonders how\nit got here.",
         "* There's a 33% chance Piplup\nis losing his mind over a\ntiny coding error right now.",
         "* There's a 33% chance Rals\nis losing his mind over a\ntiny coding error right now.",
+        "* There's a 100% chance Rals\nis losing his mind over a\ntiny coding error right now.",
     }
     -- Text displayed at the bottom of the screen when the enemy has low health
     self.low_health_text = "* The dummy looks like it's\nabout to fall over."
